@@ -6,4 +6,4 @@ function HideBot() {
   botDiv.style.display = "none"; 
 }
 
-setTimeOut(HideBot(), 3000)
+setTimeout(HideBot(), 3000)
