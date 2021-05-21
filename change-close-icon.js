@@ -4,4 +4,4 @@ function closeBot() {
         "https://cdn.yellowmessenger.com/DijpOqYkPF8A1621572136172.png"
 }
 
-setTimeout(closeBot(), 1000)
+setTimeout(closeBot(), 3000)
