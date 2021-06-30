@@ -1,5 +1,6 @@
 console.log("custom script");
 window.addEventListener('clear', function (eventData) {
+    console.log("Event catched");
     try {
         document.getElementById("chatBoxMain").innerHTML = "";
         document.getElementById("chatOptions").innerHTML = "";
