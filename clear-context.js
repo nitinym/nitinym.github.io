@@ -1,3 +1,4 @@
+console.log("custom script");
 window.addEventListener('clear', function (eventData) {
     try {
         document.getElementById("chatBoxMain").innerHTML = "";
