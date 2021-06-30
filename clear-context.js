@@ -13,3 +13,7 @@ window.addEventListener('clear', function (eventData) {
         console.log(error, "error")
     }
 }, false);
+
+window.addEventListener('message', function (eventData) {
+    console.log("Event catched 2");
+}, false);
