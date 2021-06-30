@@ -7,6 +7,7 @@ window.addEventListener('message', function (eventData) {
             // console.log(event, "testing")
             if (event.data && event.data.code === "clear") {
                 console.log("clear context event catched")
+                console.log(document);
                 document.getElementById("chatBoxMain").innerHTML = "";
                 document.getElementById("chatOptions").innerHTML = "";
 
