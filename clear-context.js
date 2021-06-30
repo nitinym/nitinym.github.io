@@ -1,19 +1,22 @@
 console.log("custom script");
-window.addEventListener('clear', function (eventData) {
-    console.log("Event catched");
+window.addEventListener('message', function (eventData) {
+    // console.log("Event catched");
     try {
-        document.getElementById("chatBoxMain").innerHTML = "";
-        document.getElementById("chatOptions").innerHTML = "";
-        
-        window.YellowMessengerPlugin.sendEvent(JSON.stringify({
-            event_code: 'ym-client-event', data: "start"
-        }), '*');
-        return;
+        if (JSON.parse(eventData.data)) {
+            let event = JSON.parse(eventData.data);
+            // console.log(event, "testing")
+            if (event.data && event.data.code === "clear") {
+                console.log("clear context event catched")
+                document.getElementById("chatBoxMain").innerHTML = "";
+                document.getElementById("chatOptions").innerHTML = "";
+
+                window.YellowMessengerPlugin.sendEvent(JSON.stringify({
+                    event_code: 'ym-client-event', data: "start"
+                }), '*');
+            }
+            return;
+        }
     } catch (error) {
         console.log(error, "error")
     }
-}, false);
-
-window.addEventListener('message', function (eventData) {
-    console.log("Event catched 2");
 }, false);
