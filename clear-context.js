@@ -8,8 +8,9 @@ window.addEventListener('message', function (eventData) {
             if (event.data && event.data.code === "clear") {
                 console.log("clear context event catched")
                 console.log(document);
-                document.getElementById("chatBoxMain").innerHTML = "";
-                document.getElementById("chatOptions").innerHTML = "";
+                const innerIframe = document.getElementById("ymIframe");
+                innerIframe.contentDocument.getElementById("chatBoxMain").innerHTML = "";
+                innerIframe.contentDocument.getElementById("chatOptions").innerHTML = "";
 
                 window.YellowMessengerPlugin.sendEvent(JSON.stringify({
                     event_code: 'ym-client-event', data: "start"
