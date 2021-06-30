@@ -1,6 +1,8 @@
 window.addEventListener('clear', function (eventData) {
     try {
-        document.getElementById("chatBoxMainContainer").innerHTML = "";
+        document.getElementById("chatBoxMain").innerHTML = "";
+        document.getElementById("chatOptions").innerHTML = "";
+        
         window.YellowMessengerPlugin.sendEvent(JSON.stringify({
             event_code: 'ym-client-event', data: "start"
         }), '*');
